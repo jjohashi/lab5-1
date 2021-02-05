@@ -10,7 +10,10 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+	$(".person").click(changeName);
 }
+
+
 
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
@@ -44,3 +47,13 @@ function anagrammedName(name) {
 		return name;
 	}
 }
+
+function changeName(e){
+	console.log("has been clicked");
+	e.preventDefault();
+	$(this).text(anagrammedName($(this).text()));
+}
+
+
+
+
